@@ -1,14 +1,81 @@
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
+const striptags = require('striptags')
+
+const blogQuery = `
+{
+    allMarkdownRemark {
+      nodes {
+        frontmatter {
+          title
+          date
+          description
+        }
+        fields {
+         slug
+        }
+        html
+      }
+    }
+  }
+`
+
+const queries = [
+  {
+    query: blogQuery,
+    transformer: ({ data }) => {
+      return data.allMarkdownRemark.nodes.reduce((indices, post) => {
+        const pChunks = striptags(post.html, [], 'XXX_SPLIT_HERE_XXX').split(
+          'XXX_SPLIT_HERE_XXX'
+        )
+
+        const chunks = pChunks.map(chnk => ({
+          slug: post.fields.slug,
+          date: post.frontmatter.date,
+          title: post.frontmatter.title,
+          excerpt: chnk,
+        }))
+
+        if (post.frontmatter.description) {
+          chunks.push({
+            slug: post.fields.slug,
+            date: post.frontmatter.date,
+            title: post.frontmatter.title,
+            excerpt: post.frontmatter.excerpt,
+          })
+        }
+
+        const filtered = chunks.filter(chnk => !!chnk.excerpt)
+
+        return [...indices, ...filtered]
+      }, [])
+    },
+  },
+]
+
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
-    author: `Kyle Mathews`,
-    description: `A starter blog demonstrating what Gatsby can do.`,
+    title: `ReactSensei`,
+    author: `Kingluddite`,
+    description: `Skeleton Key for Web Stuff`,
     siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `king_luddite`,
     },
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-algolia`,
+      options: {
+        appId: process.env.ALGOLIA_APP_ID,
+        apiKey: process.env.ALGOLIA_API_KEY,
+        indexName: process.env.ALGOLIA_INDEX_NAME,
+        queries,
+        chunkSize: 1000,
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
