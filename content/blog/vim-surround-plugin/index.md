@@ -1,7 +1,7 @@
 ---
 title: Vim Surround Plugin
 date: "2020-01-21T23:46:37.121Z"
-description: Surround.vim is all about "surroundings": parentheses, brackets, quotes, XML tags, and more.  The plugin provides mappings to easily delete, change and add such surroundings in pairs.  While it works under Vim 6, much of the functionality requires Vim 7.
+description: Surround.vim is all about "surroundings" parentheses, brackets, quotes, XML tags, and more.  The plugin provides mappings to easily delete, change and add such surroundings in pairs.  While it works under Vim 6, much of the functionality requires Vim 7.
 ---
 
 ## Vim Surround
