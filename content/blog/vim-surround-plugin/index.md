@@ -11,20 +11,6 @@ Surround.vim is all about "surroundings": parentheses, brackets, quotes, XML tag
 
 This plugin is very powerful for HTML and XML editing, a niche which currently seems underfilled in Vim land.  (As opposed to HTML/XML *inserting*, for which many plugins are available).  Adding, changing, and removing pairs of tags simultaneously is a breeze.
 
-```javascript{numberLines: 5}
-// In your gatsby-config.js
-plugins: [
-  {
-    resolve: `gatsby-transformer-remark`,
-    options: {
-      plugins: [
-        `gatsby-remark-prismjs`,
-      ]
-    }
-  }
-]
-```
-
 ### Install Vim Surround
 * [repo](http://github.com/tpope/vim-surround)
 * Add this plugin to `.vimrc`
@@ -32,59 +18,25 @@ plugins: [
 `Plugin 'tpope/vim-surround'`
 
 ### Let's play around with vim surround
-* Let's says I want to surround a word with `<strong>` tags
+* **note** Press `cs"'` means type `c`, `s`, `"`(double quote), `'`(single quote) inside
 
-`csw<strong>` will turn `word` into `<strong>word</strong>`
-
-* How to surround word with `{}`
-  - `ysiw}` makes hello become `{hello}`
-  - `ds"` makes `"hello"` be `hello`
-
-
-Press `cs"'` (that's c, s, double quote, single quote) inside
-
-```
-"Hello world!"
-```
-
-* Now change it to `'Hello world!'`
-
-* Press `cs'<q>` to change it to `<q>Hello world!</q>`
-
-* To go full circle, press `cst"` to get `"Hello world!"`
-
-* To remove the delimiters entirely, press `ds"` 
-
-`Hello world!`
-
-* Now with the cursor on "Hello", press `ysiw]` (**note** `iw` is a text object)
-
-`[Hello] world!`
-
-* Let's make sure that braces and add some space (use `"}"` instead of `"{"` for no space): `cs]{`
-
-`{ Hello } world!`
-
-* Now wrap the entire line in parentheses with `yssb` or `yss)`
-
-`({ Hello } world!)`
-
-* Revert to the original text: `ds{ds)`
-
-`Hello world!`
-
-* Emphasize hello: `ysiw<em>`
-
-`<em>Hello</em> world!`
-
-* Finally, let's try out visual mode
-* Press a capital `V` (for linewise visual mode)
-followed by `S<p>`
-
-```
-<p>
-  Hello world!
-</p>
-```
-
-**note** The "." command will work with ds, cs, and yss if you install repeat.vim
+## Keyboard Shortcuts 
+| Command | Description |
+| ------- | -------- |
+| `csw<strong>` | Will turn `word` into `<strong>word</strong>` | 
+| `ysiw}` | Makes hello become `{hello}` | 
+| `ds"` | Makes `"hello"` become `hello` | 
+| `cs"'` | Makes `"Hello world!"` become `'Hello world!'` | 
+| `cs'<q>` | Makes `'Hello world!'` become `<q>Hello world!</q>` | 
+| `cst"` | Makes `<q>Hello world!</q>` become `"Hello world!"` |
+| `ds"` | Removes delimiters entirely to become `Hello world!` |
+| `ysiw]` | `Hello world!` becomes `[Hello] world!` (note: `iw` is a text object) |
+| `cs]{` | `[Hello] world!` becomes `{ Hello } world!` |
+| `cs]}` | `[Hello] world!` becomes `{Hello} world!` |
+| `yssb` | `{Hello} world!` becomes  `({ Hello } world!)` |
+| `yss)` | `{Hello} world!` becomes  `({ Hello } world!)` |
+| `ds{ds)` | `({ Hello } world!)` becomes `Hello world!` |
+| `ysiw<em>` | `Hello world!` becomes `<em>Hello</em> world!` |
+| `V` |  This turns vim into linewise visual mode |
+| `VS<p>` | `<p>Hello world!</p>` |
+| `.` | This "dot" command will work with `ds`, `cs` and `yss` if you install `repeat.vim` plugin |
