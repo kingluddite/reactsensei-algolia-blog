@@ -50,19 +50,21 @@ date: "2020-01-21T23:46:37.121Z"
 | `J` | Go to last child |
 
 ### Refresh NerdTree
-* If you created a file/folder and Nerdtree isn't showing it to you
-    - You need to refresh Nerdtree
 | Command | Description |
 | ------- | -------- |
 | `r` | Refresh current directory |
 | `R` | refresh root directory's listing |
 
+* If you created a file/folder and Nerdtree isn't showing it to you
+    - You need to refresh Nerdtree
+
 ### Adding files using Nerdtree
-* If there is no `/` it's a file
-* If there is a  `/` it's a folder
-* After adding refresh Nerdtree with `r`
-* You can also delete, rename and move files/directories
 | Command | Description |
 | ------- | -------- |
 | `m` | Roggles menu open/closed |
 | `a` | To add a file |
+
+* If there is no `/` it's a file
+* If there is a  `/` it's a folder
+* After adding refresh Nerdtree with `r`
+* You can also delete, rename and move files/directories
