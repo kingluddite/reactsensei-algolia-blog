@@ -3,7 +3,6 @@ title: Folding Code with Vim
 date: "2020-01-21T23:46:37.121Z"
 ---
 
-
 ## Keyboard Shortcuts 
 | Command | Description |
 | ------- | -------- |
