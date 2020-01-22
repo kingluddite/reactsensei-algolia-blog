@@ -1,6 +1,7 @@
 ---
 title: jQuery Calculator
 date: "2020-01-22T23:46:37.121Z"
+description: Build a super simple jQuery calculator
 ---
 
 ```html

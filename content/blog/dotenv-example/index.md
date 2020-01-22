@@ -1,6 +1,7 @@
 ---
 title: Dotenv Example
 date: "2020-01-22T23:46:37.121Z"
+description: This is how you install, setup and use dotenv to keep secret stuff secret
 ---
 
 ## Install dotenv

@@ -1,6 +1,7 @@
 ---
 title: Sample Express Server
 date: "2020-01-22T23:46:37.121Z"
+description: Simple sample express file to build a super basic express server
 ---
 
 ```javascript

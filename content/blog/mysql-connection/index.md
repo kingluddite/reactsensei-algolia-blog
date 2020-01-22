@@ -1,6 +1,7 @@
 ---
 title: MySQL connection
 date: "2020-01-22T23:46:37.121Z"
+description: Easy way to connect to a MySQL Database
 ---
 
 `connection.js`

@@ -1,6 +1,7 @@
 ---
 title: Random JavaScript function
 date: "2020-01-21T23:46:37.121Z"
+description: Easy way to remember how to randomize something with JavaScript
 ---
 
 ```javascript

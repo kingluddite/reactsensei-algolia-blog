@@ -1,6 +1,7 @@
 ---
 title: Using NerdTree with Vim
 date: "2020-01-21T23:46:37.121Z"
+description: The NERD tree, a plugin for Vim, allows you to explore your filesystem and to open files and directories. It presents the filesystem to you in the form of a tree which you manipulate with the keyboard and/or mouse. It also allows you to perform simple filesystem operations.
 ---
 
 ## NerdTree

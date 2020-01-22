@@ -1,6 +1,7 @@
 ---
 title: Basic SQL
 date: "2020-01-22T23:46:37.121Z"
+description: Simple SQL code to create and manipulate MySQL databases and tables
 ---
 
 ```sql
