@@ -11,6 +11,20 @@ Surround.vim is all about "surroundings": parentheses, brackets, quotes, XML tag
 
 This plugin is very powerful for HTML and XML editing, a niche which currently seems underfilled in Vim land.  (As opposed to HTML/XML *inserting*, for which many plugins are available).  Adding, changing, and removing pairs of tags simultaneously is a breeze.
 
+```javascript{numberLines: 5}
+// In your gatsby-config.js
+plugins: [
+  {
+    resolve: `gatsby-transformer-remark`,
+    options: {
+      plugins: [
+        `gatsby-remark-prismjs`,
+      ]
+    }
+  }
+]
+```
+
 ### Install Vim Surround
 * [repo](http://github.com/tpope/vim-surround)
 * Add this plugin to `.vimrc`
