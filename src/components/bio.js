@@ -53,14 +53,14 @@ const Bio = () => {
           borderRadius: `50%`,
         }}
       />
-      <p>
-        Written by <strong>{author}</strong> to create a skeleton key for
-        answers to all things web
-        {` `}
-        <a href={`https://twitter.com/${social.twitter}`}>
-          You should follow him on Twitter
-        </a>
-      </p>
+      {/* <p> */}
+      {/*   Written by <strong>{author}</strong> to create a skeleton key for */}
+      {/*   answers to all things web */}
+      {/*   {` `} */}
+      {/*   <a href={`https://twitter.com/${social.twitter}`}> */}
+      {/*     You should follow him on Twitter */}
+      {/*   </a> */}
+      {/* </p> */}
     </div>
   )
 }
