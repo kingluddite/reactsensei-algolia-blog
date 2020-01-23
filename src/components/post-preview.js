@@ -7,16 +7,10 @@ const PostPreview = ({ hit }) => {
   return (
     <article>
       <header>
-        <h3
-          style={{
-            marginBottom: rhythm(1 / 4),
-          }}
-        >
-          <Link style={{ boxShadow: `none` }} to={hit.slug}>
-            <Highlight hit={hit} attribute="title" tagName="mark" />
-          </Link>
-        </h3>
-        <small>{new Date(hit.date).toLocaleDateString()}</small>
+        <Link style={{ boxShadow: `none` }} to={hit.slug}>
+          <Highlight hit={hit} attribute="title" tagName="mark" />
+        </Link>
+        <small>({new Date(hit.date).toLocaleDateString()})</small>
       </header>
       <section>
         {/* <p */}
