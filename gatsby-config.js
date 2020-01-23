@@ -35,18 +35,17 @@ const queries = [
           slug: post.fields.slug,
           date: post.frontmatter.date,
           title: post.frontmatter.title,
-          // excerpt: chnk,
-          excerpt: post.frontmatter.excerpt,
+          excerpt: chnk,
         }))
 
-        // if (post.frontmatter.description) {
-        //   chunks.push({
-        //     slug: post.fields.slug,
-        //     date: post.frontmatter.date,
-        //     title: post.frontmatter.title,
-        //     excerpt: post.frontmatter.excerpt,
-        //   })
-        // }
+        if (post.frontmatter.description) {
+          chunks.push({
+            slug: post.fields.slug,
+            date: post.frontmatter.date,
+            title: post.frontmatter.title,
+            excerpt: post.frontmatter.excerpt,
+          })
+        }
 
         const filtered = chunks.filter(chnk => !!chnk.excerpt)
 

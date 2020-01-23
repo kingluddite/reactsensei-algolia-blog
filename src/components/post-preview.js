@@ -1,7 +1,7 @@
 import React from 'react'
 import { Highlight } from 'react-instantsearch-dom'
 import { Link } from 'gatsby'
-import { rhythm } from '../utils/typography'
+// import { rhythm } from '../utils/typography'
 
 const PostPreview = ({ hit }) => {
   return (
@@ -18,9 +18,9 @@ const PostPreview = ({ hit }) => {
         {/*     __html: hit.description || hit.excerpt, */}
         {/*   }} */}
         {/* /> */}
-        <p>
-          <Highlight hit={hit} attribute="excerpt" tagName="mark" />
-        </p>
+        {/* <p> */}
+        {/*   <Highlight hit={hit} attribute="excerpt" tagName="mark" /> */}
+        {/* </p> */}
       </section>
     </article>
   )
