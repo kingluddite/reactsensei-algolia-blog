@@ -2,7 +2,6 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import algoliasearch from 'algoliasearch/lite'
 import { InstantSearch, SearchBox, Hits } from 'react-instantsearch-dom'
-
 import Bio from '../components/bio'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
@@ -23,7 +22,7 @@ class BlogIndex extends React.Component {
         <SEO title="All posts" />
         <Bio />
         <InstantSearch searchClient={searchClient} indexName="Blog">
-          <SearchBox />
+          <SearchBox translations={{ placeholder: 'Search for Web Stuff' }} />
           <Hits hitComponent={PostPreview} />
         </InstantSearch>
       </Layout>
