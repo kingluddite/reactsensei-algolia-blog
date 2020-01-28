@@ -4,6 +4,12 @@ date: "2020-01-26T23:46:37.121Z"
 description: Step-by-step instructions to deploy to Heroku when you are using a MySQL Database
 ---
 
+* Below is a step by step video guide walking through how to do the same deployment.
+
+[Deployment Video Guide](https://youtu.be/btG3SkoNOLU?list=PLOFmg4xbN_TPrB6w4rThsFanVxJI_SfER).
+
+**NOTE**: When provisioning your first Heroku add-on, you will need to provide a credit card number. One dollar will be charged to your card by Heroku, which will be refunded.
+
 ## Prework
 * Before you begin, make sure you’ve installed the MySQL NPM package
 * **note** This info was compiled on `01.26.2020` (please update if any links or information becomes updated)

@@ -4,7 +4,7 @@ date: "2020-01-24T23:46:37.121Z"
 description: Quickly add Handlebars to Express app
 ---
 
-## Add these 2 lines
+## Add these 2 lines (see below)
 
 ```javascript
 // Adding Handlebars
