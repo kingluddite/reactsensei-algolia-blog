@@ -16,7 +16,11 @@ const PORT = process.env.PORT || 5000;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+// To serve static files such as images, CSS files, and JavaScript files, use the express.static built-in middleware function in Express.
+// note: You don't have to specify `public` in your path
+app.use(express.static(path.join(__dirname, 'public')));
 // Data
+
 const characters = [
   {
     routeName: 'yoda',

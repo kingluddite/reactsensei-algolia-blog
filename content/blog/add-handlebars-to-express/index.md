@@ -786,4 +786,70 @@ app.use(bodyParser.urlencoded({extended: true}));
 ## Server side validation
 * Our form has HTML5 `required` attributes and this will suffice for client side validation but we also should ALWAYS set up server side validation to make sure the data we submit to our Database is as clean as we can make it
 
+### Let's add simple server side validation
+* If the object doesn't exist, store error text inside an object with a `text` property
 
+```javascript
+// more code
+
+// Add a gig
+router.post('/add', (req, res) => {
+
+  // pull out the variables for easy access using desctructuring
+  let = { title, technologies, budget, description, contact_email } = req.body;
+
+  // set up errors array
+  let errors = [];
+
+  // Simple Validate Fields
+  if(!title) {
+   errors.push({ text: 'Please add a title' });
+  }
+  if(!technologies) {
+   errors.push({ text: 'Please add a technology' });
+  }
+  if(!description) {
+   errors.push({ text: 'Please add a description' });
+  }
+  if(!contact_email) {
+   errors.push({ text: 'Please add a contact email' });
+  }
+
+  // Check for errors first
+  // if our errors array has anything inside it re-render the page but with the errors array too
+  if (errors.length > 0) {
+    res.render('add', {
+      errors, title, technologies, budget, description, contact_email 
+    })
+  } else {
+  // If there is no budget then enter `Unknown` 
+    if (!budget) {
+      budget = 'Unknown';
+    } else {
+    // If there is a budget, Make sure to preface it with a $
+      budget = `$${budget}`;
+    }
+
+    // make lowercase and remove space after comma
+    // regEx .replace(/, /g, ',') --> for every space globally replace with a comma
+    technologies = technologies.toLowerCase().replace(/, /g, ',');
+
+    // Now that we hav passed server side validation, enter the data the end user
+    //  entered, into the Database
+    Gig.create({
+      title,
+      technologies,
+      budget,
+      description,
+      contact_email
+    }).then((gig) => {
+      res.redirect('/gigs')
+    }).catch((err) => {
+        console.log(err)
+    })
+  }
+
+});
+
+// more code
+```
